@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Image Loaders</title>
+<style>
+    .loader-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    .loader {
+        display: none;
+        width: 150px;
+        height: 150px;
+    }
+</style>
+</head>
+<body>
+
+<div class="loader-container">
+    <img src="lode1.png" alt="Loader 1" class="loader" id="loader1">
+    <img src="Loading_2.png" alt="Loader 2" class="loader" id="loader2">
+</div>
+
+<script>
+    const loader1 = document.getElementById('loader1');
+    const loader2 = document.getElementById('loader2');
+
+    // Показать первый лоадер
+    loader1.style.display = 'block';
+
+    // Через 3 секунды скрыть первый и показать второй
+    setTimeout(() => {
+        loader1.style.display = 'none';
+        loader2.style.display = 'block';
+    }, 3000);
+
+    // Через 6 секунд скрыть второй лоадер
+    setTimeout(() => {
+        loader2.style.display = 'none';
+    }, 6000);
+</script>
+
+</body>
+</html>
